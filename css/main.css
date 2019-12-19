@@ -1,0 +1,73 @@
+h1 {
+    font-family: 'Girassol', cursive;
+    font-size: 3rem;
+    margin: 0;   
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, white 10%, grey 50%, white 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.secretWordContainer {
+    height: 30vh;
+    width: 80vw;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#canvas {
+    background-color: white;
+    margin: 1rem;
+    
+}
+
+.keyboard {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.key {
+    font-size: 1.3rem;
+    width: 40px;
+    margin: 3px;
+    border: none;
+    height: 40px;
+    background: rgb(128, 127, 127);
+}
+
+
+
+.letterContainer {
+    height: 2rem;
+    width: 2rem;
+    border-bottom: 1px solid black;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Girassol', cursive;
+    font-size: 1.3rem;
+}
+
+.message {
+    height: 2rem;
+    width: 80vw;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
