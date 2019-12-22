@@ -5,35 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hänga gubbe</title>
-    <link href="https://fonts.googleapis.com/css?family=Girassol&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <section class="top">
-        <h1></h1>
-        <article class="secretWordContainer"></article>
-    </section>
-    <section class="mid">
-        <canvas id="canvas" width="200" height="200"></canvas>
-        <p class="message"></p>
-    </section>
-    <section class="keyboard">
-        <article class="firstLine"></article>
-        <article class="secondLine"></article>
-        <article class="thirdLine"></article>
-    </section>
+    <article class="settings hidden">
+        <h1>Hänga gubbe</h1>
+        <p>Välj en kategori av ord...</p>
+        <input type="radio" value="geo" name="setting">Geografi <br>
+        <input type="radio" value="pers" name="setting">Kända personer <br>
+        <input type="radio" value="bio" name="setting">Växter<br>
+        <input type="radio" value="simple" name="setting">Lätta ord med bilder<br>
+        <p>...eller skriv in ett hemligt ord själv:</p>
+        <input type="text">
+        <a class="newGame" href="game.html">Tryck för att börja</a>
+    </article>
+    <canvas id="canvas" width="200" height="200"></canvas>
     <script src="js/main.js"></script>
-    <audio type="audio/wav" src="fail.mp4"></audio>
-  <!-- <audio controls>
-
-        <source src="fail.mp4" type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio> -->
-
-        <!-- <audio id="#fail width=0 height=0>
-                <source src="mov_bbb.mp4" type="video/mp4">
-                <source src="mov_bbb.ogg" type="video/ogg">
-                Your browser does not support HTML5 video.
-              </aud> -->
 </body>
 </html>

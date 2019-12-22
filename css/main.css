@@ -14,9 +14,7 @@ body {
 }
 
 .secretWordContainer {
-    height: 30vh;
     width: 80vw;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -26,6 +24,10 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+section.top {
+    height: 30vh;
 }
 
 #canvas {
@@ -70,4 +72,14 @@ section {
     margin: 0;
     box-sizing: border-box;
     text-align: center;
+}
+
+.mid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+img {
+    max-width: 200px;
 }

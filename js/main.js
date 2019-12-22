@@ -8,12 +8,50 @@ let canvas = document.querySelector("#canvas")
 let ctx = canvas.getContext("2d")
 let canvasWidth = 200
 let canvasHeight = 200
+let secretWord = window.localStorage.getItem("secretWord")
 
 function main(){
+    if (window.location.pathname.endsWith("index.html")){
+        window.localStorage.clear()
+        for (let i = 0; i < 5; i++){
+            draw()
+            wrongGuesses++
+        }
+        setGameSettings()
+        // document.querySelector("a.newGame").addEventListener("click", function(_){
+        //     setGameSettings()
+        // })
+        return
+    }
+    // var secretWord = window.localStorage.getItem("secretWord")
     renderSecretWord(secretWord)
+    if (window.localStorage.key(1)){
+        let img = window.localStorage.getItem("img")
+        renderImage(img)
+    }
     renderKeyboard()
     draw()
 }
+
+function setGameSettings(){
+    document.querySelectorAll("input").forEach(input => input.addEventListener("change", function(event){
+        if (event.target.value == "geo"){
+            window.localStorage.setItem("secretWord", geoArr[(Math.floor(Math.random() * geoArr.length))])
+        } else if (event.target.value == "bio"){
+            window.localStorage.setItem("secretWord", bioArr[(Math.floor(Math.random() * bioArr.length))])
+        } else if (event.target.value == "pers") {
+            window.localStorage.setItem("secretWord", persArr[(Math.floor(Math.random() * persArr.length))])
+        } else if (event.target.value == "simple"){
+            let thisObj = simpleObjs[(Math.floor(Math.random() * simpleObjs.length))]
+            let thisObjName = thisObj.name
+            let thisObjImg = thisObj.img
+            window.localStorage.setItem("secretWord", thisObjName)
+            window.localStorage.setItem("img", thisObjImg)
+        } else {
+            window.localStorage.setItem("secretWord", event.target.value)
+        }
+        console.log(window.localStorage.getItem("secretWord"))
+}))}
 
 function renderKeyboard(){
     letters.split("").forEach(function (letter) {
@@ -29,8 +67,8 @@ function renderKeyboard(){
     })
 }
 
-function draw(){
-
+function renderImage(img){
+    document.querySelector("img").src = img
 }
 
 function renderSecretWord(secretWord) {
@@ -43,6 +81,7 @@ function renderSecretWord(secretWord) {
 }
 
 function checkLetter(letterGuessed) {
+    // let secretWord = window.localStorage.getItem("secretWord")
     let correctGuess = false
     for (let letter in secretWord) {
         if (secretWord[letter].toUpperCase() == letterGuessed) {
@@ -234,9 +273,15 @@ function draw() {
     }
 }
 
+let geoArr = ["Andorra", "Belize", "Myanmar", "Dubai", "Helsingfors", "Kairo", "Togo", "Tchad", "Canberra", "Belarus"]
+let bioArr = ["Pelargon", "Maskros", "Hängpetunia", "Svärmorstunga", "Vildviol", "Begonia", "Doftpelargon", "Krysantemum", "Orkide", "Azalea", "Julamaryllis", "Julstjärna"]
+let persArr = ["Napoleon", "Barack Obama", "Greta Garbo", "Franz Liszt", "Winston Churchill", "Margaret Thatcher", 
+"Gilgamesh", "Julius Caesar", "Bill Gates", "Hans Rosling", "Greta Thunberg", "Madonna"]
+let simpleObjs = [{name: "Morot", img: "img/morot.jpg"}, {name: "Ko", img: "img/ko.jpg"}, {name: "Katt", img: "img/katt.jpg"}, {name: "Hund", img: "img/hund.webp"}, {name: "Potatis", img: "img/potatis.png"}, {name: "Bebis", img: "img/bebis.jpg"}, {name: "Ugglis", img: "img/ugglis.png"}, {name: "Gecko", img: "img/gecko.png"}, {name: "Kattpojken", img: "img/kattpojken.png"}]
+
 function playSound ( soundname ){
     soundname.play();
   }
 
-let secretWord = "argh"
+// let secretWord = ""
 main()
