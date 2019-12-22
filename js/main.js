@@ -11,7 +11,7 @@ let canvasHeight = 200
 let secretWord = window.localStorage.getItem("secretWord")
 
 function main(){
-    if (window.location.pathname.endsWith("index.html")){
+    if (window.location.pathname.endsWith("netlify.com")){
         window.localStorage.clear()
         for (let i = 0; i < 5; i++){
             draw()
