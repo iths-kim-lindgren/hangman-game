@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hänga gubbe</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <article class="settings hidden">
+        <h1>Hänga gubbe</h1>
+        <p>Välj en kategori av ord...</p>
+        <input type="radio" value="geo" name="setting">Geografi <br>
+        <input type="radio" value="pers" name="setting">Kända personer <br>
+        <input type="radio" value="bio" name="setting">Växter<br>
+        <input type="radio" value="simple" name="setting">Lätta ord med bilder<br>
+        <p>...eller skriv in ett hemligt ord själv:</p>
+        <input type="text">
+        <a class="newGame" href="game.html">Tryck för att börja</a>
+    </article>
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <script src="js/main.js"></script>
+</body>
+</html>
